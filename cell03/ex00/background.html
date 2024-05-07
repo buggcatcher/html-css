@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<head>
+    <title>Colori</title>
+    <link rel="stylesheet" href="background.css">
+</head>
+<body>
+    <button id="switcha">Cambia il colore!</button>
+    <script>
+        function getRandomColor() {
+            var letters = '0123456789ABCDEF';
+            var color = '#';
+            for (var i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+
+        function changeBackgroundColor() {
+            var color = getRandomColor();
+            document.body.style.backgroundColor = color;
+        }
+
+        function handleButtonHover() {
+            var button = document.getElementById("changeColorButton");
+            button.style.transform = "scale(2)";
+        }
+
+        document.getElementById("switcha").addEventListener("click", changeBackgroundColor);
+    </script>
+    <img class="css"></img>
+</body>
+</html>

@@ -1,0 +1,1 @@
+modifica mettendo come primo argomento la directory dove vuoi che vengano creati i file

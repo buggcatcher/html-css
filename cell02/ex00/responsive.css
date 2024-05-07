@@ -1,0 +1,27 @@
+body, html {
+    height: 100%;
+    margin: 0;
+}
+
+table {
+    height: 100%;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+td {
+    padding: 42px;
+    font-size: 42px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.red {
+    background-color: red;
+    color: white;
+}
+
+.blue {
+    background-color: blue;
+    color: white;
+}

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<head>
+    <title>Calculator</title>
+</head>
+<body>
+    <h2>Calculator</h2>
+    <form id="calc">
+        <label for="n1"></label>
+        <input type="number" id="n1" name="n1" required min="0">
+        <select id="operator" name="operator" required>
+            <option value="">Seleziona:</option>
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+            <option value="%">%</option>
+        </select>
+        <label for="n2"></label>
+        <input type="number" id="n2" name="n2" required min="0">
+        <input type="submit" value="Try me!">
+    </form>
+
+    <script>
+        document.getElementById('calc').addEventListener('submit', function(event) {
+            event.preventDefault();
+            let n1 = parseInt(document.getElementById('n1').value);
+            let operator = document.getElementById('operator').value;
+            let n2 = parseInt(document.getElementById('n2').value);
+            
+            if (isNaN(n1) || isNaN(n2)) {
+                alert('Error :(');
+                return;
+            }
+
+            let result;
+            switch(operator) {
+                case '+':
+                    result = n1 + n2;
+                    break;
+                case '-':
+                    result = n1 - n2;
+                    break;
+                case '*':
+                    result = n1 * n2;
+                    break;
+                case '/':
+                    if (n2 === 0) {
+                        alert("Are yoy really trying to divide by zero?");
+                        console.log("Are yoy really trying to divide by zero?");
+                        return;
+                    }
+                    result = n1 / n2;
+                    break;
+                case '%':
+                    if (n2 === 0) {
+                        alert("Are yoy really trying to divide by zero?");
+                        console.log("Are yoy really trying to divide by zero?");
+                        return;
+                    }
+                    result = n1 % n2;
+                    break;
+                default:
+                    alert('Invalid operator');
+                    return;
+            }
+
+            alert('Result: ' + result);
+            console.log('Result:', result);
+        });
+
+        setInterval(function() {
+            alert('Please, use me...');
+        }, 30000);
+    </script>
+</body>
+</html>
